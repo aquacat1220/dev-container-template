@@ -1,0 +1,19 @@
+{
+	"name": "Ubuntu",
+	// "image": "ubuntu:latest",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"host_username": "${localEnv:USER}"
+		}
+	},
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER}/${localWorkspaceFolderBasename},type=bind",
+	"workspaceFolder": "/home/${localEnv:USER}/${localWorkspaceFolderBasename}",
+
+	"customizations": {
+		"vscode": {
+			"extensions": []
+		}
+	}
+}
