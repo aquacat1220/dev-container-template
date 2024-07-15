@@ -4,12 +4,12 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"host_username": "${localEnv:USER}"
+			"host_username": "${localEnv:USERNAME}"
 		}
 	},
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USER}/${localWorkspaceFolderBasename},type=bind",
-	"workspaceFolder": "/home/${localEnv:USER}/${localWorkspaceFolderBasename}",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USERNAME}/${localWorkspaceFolderBasename},type=bind",
+	"workspaceFolder": "/home/${localEnv:USERNAME}/${localWorkspaceFolderBasename}",
 
 	"customizations": {
 		"vscode": {
