@@ -1,6 +1,5 @@
 {
 	"name": "dev-container-template",
-	// "image": "ubuntu:latest",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {

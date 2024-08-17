@@ -2,10 +2,6 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get upgrade -y
 
-# --- Start ---
-
-# --- End ---
-
 # Setup non-root user.
 ARG host_username=anonymous_kitten
 
