@@ -2,6 +2,9 @@ FROM ubuntu:latest
 
 RUN apt-get update && apt-get upgrade -y
 
+# Remove existing non-root user.
+RUN if (id -nu 1000); then userdel -r $(id -nu 1000); fi
+
 # Setup non-root user.
 ARG host_username=anonymous_kitten
 

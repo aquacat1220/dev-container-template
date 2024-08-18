@@ -7,6 +7,8 @@
 		}
 	},
 
+	"containerUser": "${localEnv}:USERNAME",
+
 	"workspaceMount": "source=${localWorkspaceFolder},target=/home/${localEnv:USERNAME}/${localWorkspaceFolderBasename},type=bind",
 	"workspaceFolder": "/home/${localEnv:USERNAME}/${localWorkspaceFolderBasename}",
 
