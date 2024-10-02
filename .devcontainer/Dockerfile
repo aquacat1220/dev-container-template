@@ -6,7 +6,8 @@ RUN apt-get update && apt-get upgrade -y
 RUN if (id -nu 1000); then userdel -r $(id -nu 1000); fi
 
 # Setup non-root user.
-ARG host_username=anonymous_kitten
+ARG host_username=""
+ENV HOST_USERNAME=${host_username:-anonymous_kitten}
 
 RUN useradd --create-home --shell /bin/bash -G sudo ${host_username}
 RUN apt-get install -y sudo
