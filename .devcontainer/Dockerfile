@@ -11,9 +11,9 @@ ENV HOST_USERNAME=${host_username:-anonymous_kitten}
 
 RUN useradd --create-home --shell /bin/bash -G sudo ${HOST_USERNAME}
 RUN apt-get install -y sudo
-RUN echo "${host_username}:${host_username}" | chpasswd
-USER ${host_username}
-WORKDIR /home/${host_username}
+RUN echo "${HOST_USERNAME}:${HOST_USERNAME}" | chpasswd
+USER ${HOST_USERNAME}
+WORKDIR /home/${HOST_USERNAME}
 
 # Entrypoint is an interactive shell.
 ENTRYPOINT ["/bin/bash", "-i"]
