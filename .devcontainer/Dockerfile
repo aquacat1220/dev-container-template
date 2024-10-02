@@ -9,7 +9,7 @@ RUN if (id -nu 1000); then userdel -r $(id -nu 1000); fi
 ARG host_username=""
 ENV HOST_USERNAME=${host_username:-anonymous_kitten}
 
-RUN useradd --create-home --shell /bin/bash -G sudo ${host_username}
+RUN useradd --create-home --shell /bin/bash -G sudo ${HOST_USERNAME}
 RUN apt-get install -y sudo
 RUN echo "${host_username}:${host_username}" | chpasswd
 USER ${host_username}
